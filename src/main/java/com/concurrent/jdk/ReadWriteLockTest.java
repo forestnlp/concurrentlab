@@ -29,7 +29,7 @@ public class ReadWriteLockTest {
             wlock.lock();
             Thread.sleep(1000);
             System.out.println("read finished");
-            val = str;
+            val += str;
             System.out.println(val);
         } catch (InterruptedException e) {
             e.printStackTrace();
