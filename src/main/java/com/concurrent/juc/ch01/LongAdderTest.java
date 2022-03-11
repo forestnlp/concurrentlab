@@ -1,4 +1,4 @@
-package com.concurrent.jdk;
+package com.concurrent.juc.ch01;
 
 import java.util.concurrent.atomic.LongAdder;
 

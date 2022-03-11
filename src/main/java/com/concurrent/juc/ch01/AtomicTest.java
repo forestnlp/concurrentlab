@@ -1,13 +1,13 @@
-package com.concurrent.jdk;
+package com.concurrent.juc.ch01;
 
-import java.util.concurrent.atomic.LongAdder;
+import java.util.concurrent.atomic.AtomicLong;
 
-public class LongAdderTest {
-    static LongAdder cnt = new LongAdder();
+public class AtomicTest {
+    static AtomicLong cnt = new AtomicLong(0l);
 
     static void m() {
         for (int i = 0; i < 10000; i++)
-            cnt.increment();
+            cnt.incrementAndGet();
     }
 
     public static void main(String[] args) throws InterruptedException {

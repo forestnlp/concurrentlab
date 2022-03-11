@@ -18,14 +18,19 @@ public class AtomicTest {
                 AtomicTest.m();
             });
 
-        for (int i = 0; i < threads.length; i++)
+        long start = System.currentTimeMillis();
+        for(int i=0;i<threads.length;i++){
             threads[i].start();
+        }
 
-
-        for (int i = 0; i < threads.length; i++)
+        for(int i=0;i<threads.length;i++){
             threads[i].join();
+        }
 
-        System.out.println(AtomicTest.cnt);
+        long end = System.currentTimeMillis();
+
+        System.out.println(end-start);
+        System.out.println(AtomicTest.cnt.get());
 
     }
 }

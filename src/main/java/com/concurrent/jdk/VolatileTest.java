@@ -1,16 +1,17 @@
 package com.concurrent.jdk;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 public class VolatileTest {
-    //volatile  boolean flag = true;
-     boolean flag = true;
+    volatile  boolean flag = true;
+    //boolean flag = true;
 
     void m(){
         System.out.println("start");
         while (flag) {
-        //    System.out.println("running");
-            int i;
+            System.out.println(LocalDateTime.now());
+           // int i;
         }
         System.out.println("end");
     }
@@ -20,7 +21,7 @@ public class VolatileTest {
         new Thread(t::m,"t1").start();
 
         try {
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.MILLISECONDS.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

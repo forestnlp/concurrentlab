@@ -7,7 +7,7 @@ public class HappenBeforeTest {
 
     public static void main(String[] args) {
 
-       for(int i=0;i<10000;i++) {
+       for(int i=0;i<1000000;i++) {
 
            a= 0;
            flag=false;
@@ -19,18 +19,14 @@ public class HappenBeforeTest {
 
            Thread t2 = new Thread(()->{
                if(flag){
-                   a*=1;
+                   a=1;
                }
                if(a==0)
                    System.out.println("a==0");
            });
 
            t1.start();
-           try {
-               Thread.sleep(1);
-           } catch (InterruptedException e) {
-               e.printStackTrace();
-           }
+
            t2.start();
 
            try {
