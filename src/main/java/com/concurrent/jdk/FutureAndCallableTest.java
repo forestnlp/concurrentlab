@@ -9,7 +9,7 @@ public class FutureAndCallableTest {
         public Integer call() throws Exception {
             Thread.sleep(10000);
             System.out.println(new Date());
-            return (int)System.currentTimeMillis()%1024;
+            return (int)(System.currentTimeMillis()%1024);
         }
     }
 
